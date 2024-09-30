@@ -20,7 +20,7 @@ export default function MovieApp() {
     return savedFavorites ? JSON.parse(savedFavorites) : [];
   });
 
-  // Fetch genres from TMDb API
+  
   useEffect(() => {
     const fetchGenres = async () => {
       try {
@@ -41,7 +41,7 @@ export default function MovieApp() {
     fetchGenres();
   }, []);
 
-  // Fetch movies from TMDb API
+  
   useEffect(() => {
     const fetchMovies = async () => {
       try {
@@ -61,7 +61,7 @@ export default function MovieApp() {
         );
         setMovies(response.data.results.slice(0, 20));
 
-        // Fetch trailers for each movie
+        
         const movieTrailers = {};
         for (const movie of response.data.results) {
           const trailerResponse = await Axios.get(
@@ -104,7 +104,7 @@ export default function MovieApp() {
     setSelectedGenre(event.target.value);
   };
 
-  // Toggle favorite movie
+  
   const toggleFavorite = (movie) => {
     const isFavorite = favorites.some(favMovie => favMovie.id === movie.id);
     let updatedFavorites;

@@ -1,6 +1,9 @@
 import './App.css';
 import './components/movieapp.css';
-import MovieApp from './components/MovieApp '; // Adjust the path if needed
+import MovieApp from './components/movieapp';
+
+
+
 
 function App() {
   return (
